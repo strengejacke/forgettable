@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^revdep$
+^\.travis\.yml$
+^docs$
+^paper.*$
+^LICENSE
+^CONTRIBUTING.*$
+^CODE_OF_CONDUCT.*$
+^_pkgdown\.yml$
