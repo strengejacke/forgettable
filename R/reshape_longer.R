@@ -47,7 +47,8 @@
 #'   d,
 #'   columns = list(c("y1", "y2"), c("z1", "z2")),
 #'   names_to = "time",
-#'   values_to = c("new_y", "new_z")
+#'   values_to = c("new_y", "new_z"),
+#'   numeric_timvar = TRUE
 #' )
 #'
 #' @importFrom stats reshape
