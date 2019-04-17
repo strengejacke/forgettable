@@ -4,17 +4,23 @@
 \alias{reshape_longer}
 \title{Reshape data into long format}
 \usage{
-reshape_longer(x, names_to = "key", values_to = "value",
-  columns = colnames(x))
+reshape_longer(x, columns = colnames(x), names_to = "key",
+  values_to = "value", numeric_timvar = FALSE, id = "id")
 }
 \arguments{
 \item{x}{A data frame.}
+
+\item{columns}{Names of variables (as character vector), or column index of
+variables, that should be reshaped. If multiple column groups should be
+reshaped, use a list of vectors (see 'Examples').}
 
 \item{names_to}{todo}
 
 \item{values_to}{todo}
 
-\item{columns}{todo}
+\item{numeric_timvar}{todo}
+
+\item{id}{todo}
 }
 \value{
 A reshaped data frame.
@@ -34,7 +40,10 @@ d <- data.frame(
 
 # simple reshape of one time-varying variable
 reshape_longer(
-  d, names_to = "time", values_to = "new_y", columns = c("y1", "y2")
+  d,
+  columns = c("y1", "y2"),
+  names_to = "time",
+  values_to = "new_y"
 )
 
 d <- data.frame(
@@ -49,8 +58,10 @@ d <- data.frame(
 
 # reshape multiple time-varying variables
 reshape_longer(
-  d, names_to = "time", values_to = c("new_y", "new_z"),
-  columns = list(c("y1", "y2"), c("z1", "z2"))
+  d,
+  columns = list(c("y1", "y2"), c("z1", "z2")),
+  names_to = "time",
+  values_to = c("new_y", "new_z")
 )
 
 }
